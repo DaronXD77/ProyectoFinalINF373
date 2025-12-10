@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ecuaciones diferenciales: Euler y Heun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="ode">
+  <header class="main-header">
+    <h1>Ecuaciones diferenciales: metodos de Euler y Heun</h1>
+    <nav class="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="newton.html">Raices</a>
+      <a href="integracion.html">Integracion numerica</a>
+      <a href="glosario.html">Glosario</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="section-grid">
+      <div class="section-info">
+        <h2>Aplicacion practica</h2>
+        <p>
+          Los metodos de Euler y Heun permiten aproximar soluciones de ecuaciones
+          diferenciales que describen procesos dinamicos, como la temperatura de un
+          liquido que se enfria segun la diferencia con el ambiente.
+        </p>
+        <p>
+          Un modelo simple de enfriamiento puede escribirse como y&#39;(t) = -k (y - T_amb),
+          donde y(t) es la temperatura del liquido y T_amb la temperatura ambiente.
+        </p>
+        <img src="img/ode_euler_heun.jpeg" alt="Proceso de enfriamiento modelado con ecuaciones diferenciales" class="section-image">        
+      </div>
+
+      <div class="section-tool">
+        <h2>Plantear el modelo</h2>
+        <form id="ode-form" class="tool-form">
+          <label for="ode-f">Funcion f(t,y) = y&#39;(t)</label>
+          <input id="ode-f" type="text" value="-0.5*(y-20)">
+
+          <label for="ode-t0">Tiempo inicial t0</label>
+          <input id="ode-t0" type="number" step="any" value="0">
+
+          <label for="ode-y0">Condicion inicial y(t0)</label>
+          <input id="ode-y0" type="number" step="any" value="90">
+
+          <label for="ode-h">Paso h</label>
+          <input id="ode-h" type="number" step="any" value="1">
+
+          <label for="ode-n">Numero de pasos</label>
+          <input id="ode-n" type="number" value="10">
+
+          <button type="submit" class="btn-primary">Simular</button>
+        </form>
+
+        <div id="ode-summary" class="tool-summary"></div>
+        <div id="ode-table" class="tool-table"></div>
+        <div class="canvas-wrapper">
+          <canvas id="ode-canvas" width="700" height="350"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>Comparacion de Euler y Heun en un proceso de enfriamiento.</p>
+    <p>Estudiante: Daron Augusto Baldiviezo Aillon-------------CI: 9171299-------------Materia: INF 373</p>
+  </footer>
+
+  <script src="libs/math.min.js"></script>
+  <script src="libs/plot.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

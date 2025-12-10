@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Raices por metodo de Newton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="newton">
+  <header class="main-header">
+    <h1>Raices de ecuaciones: metodo de Newton</h1>
+    <nav class="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="ode_euler_heun.html">Ecuaciones diferenciales</a>
+      <a href="integracion.html">Integracion numerica</a>
+      <a href="glosario.html">Glosario</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="section-grid">
+      <div class="section-info">
+        <h2>Aplicacion practica</h2>
+        <p>
+          El metodo de Newton se usa para encontrar valores de una variable que satisfacen
+          ecuaciones no lineales, por ejemplo la tasa interna de retorno de un proyecto o
+          el punto de equilibrio en un modelo de oferta y demanda.
+        </p>
+        <p>
+          En estos casos la ecuacion se modela como f(x) = 0, donde x representa la cantidad
+          que se desea estimar.
+        </p>
+        <img src="img/newton_raices.jpeg" alt="Aplicacion del metodo de Newton" class="section-image">        
+      </div>
+
+      <div class="section-tool">
+        <h2>Plantear el problema</h2>
+        <form id="newton-form" class="tool-form">
+          <label for="newton-fx">Funcion f(x)</label>
+          <input id="newton-fx" type="text" value="x*Math.exp(x)-1">
+
+          <label for="newton-dfx">Derivada f&#39;(x)</label>
+          <input id="newton-dfx" type="text" value="Math.exp(x)+x*Math.exp(x)">
+
+          <label for="newton-x0">Valor inicial x0</label>
+          <input id="newton-x0" type="number" step="any" value="0.5">
+
+          <label for="newton-tol">Tolerancia</label>
+          <input id="newton-tol" type="number" step="any" value="0.0001">
+
+          <label for="newton-max">Iteraciones maximas</label>
+          <input id="newton-max" type="number" value="20">
+
+          <button type="submit" class="btn-primary">Calcular raiz</button>
+        </form>
+
+        <div id="newton-summary" class="tool-summary"></div>
+        <div id="newton-table" class="tool-table"></div>
+        <div class="canvas-wrapper">
+          <canvas id="newton-canvas" width="700" height="350"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>Metodo de Newton aplicado a problemas reales.</p>
+    <p>Estudiante: Daron Augusto Baldiviezo Aillon-------------CI: 9171299-------------Materia: INF 373</p>
+  </footer>
+
+  <script src="libs/math.min.js"></script>
+  <script src="libs/plot.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

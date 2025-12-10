@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Integracion numerica: trapecio y Simpson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="integracion">
+  <header class="main-header">
+    <h1>Integracion numerica: trapecio y reglas de Simpson</h1>
+    <nav class="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="newton.html">Raices</a>
+      <a href="ode_euler_heun.html">Ecuaciones diferenciales</a>
+      <a href="glosario.html">Glosario</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="section-grid">
+      <div class="section-info">
+        <h2>Aplicacion practica</h2>
+        <p>
+          La integracion numerica se usa para estimar cantidades acumuladas cuando
+          solo se dispone de una funcion o de mediciones discretas, por ejemplo
+          calcular la distancia recorrida a partir de una funcion de velocidad.
+        </p>
+        <p>
+          La integral de v(t) entre t = a y t = b representa la distancia recorrida
+          en ese intervalo de tiempo.
+        </p>
+        <img src="img/integracion_simpson.png" alt="Area bajo la curva estimada con reglas de Simpson" class="section-image">      
+      </div>
+
+      <div class="section-tool">
+        <h2>Plantear la integral</h2>
+        <form id="int-form" class="tool-form">
+          <label for="int-fx">Funcion f(x)</label>
+          <input id="int-fx" type="text" value="3*x*x+2*x+1">
+
+          <label for="int-a">Extremo a</label>
+          <input id="int-a" type="number" step="any" value="0">
+
+          <label for="int-b">Extremo b</label>
+          <input id="int-b" type="number" step="any" value="5">
+
+          <label for="int-n">Numero de subintervalos n</label>
+          <input id="int-n" type="number" value="12">
+
+          <button type="submit" class="btn-primary">Calcular integral</button>
+        </form>
+
+        <div id="int-summary" class="tool-summary"></div>
+        <div id="int-table" class="tool-table"></div>
+        <div class="canvas-wrapper">
+          <canvas id="int-canvas" width="700" height="350"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>Comparacion entre trapecio y reglas de Simpson.</p>
+    <p>Estudiante: Daron Augusto Baldiviezo Aillon-------------CI: 9171299-------------Materia: INF 373</p>
+  </footer>
+
+  <script src="libs/math.min.js"></script>
+  <script src="libs/plot.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
